@@ -6,23 +6,34 @@ namespace TechJobs.Tests
     {
         //Testing Objects
 
-        Job job1 = new Job();
+        Job job1;
 
-        Job job2 = new Job();
+        Job job2;
 
-        Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job3;
 
-        Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job4;
 
 
         //initalize your testing objects here
 
- 
-    
-    
-        
-            //TODO: add emptyTest so we can configure our runtime environment
-            [TestMethod]
+        [TestInitialize]
+        public void Init()
+        {
+            job1 = new Job();
+
+            job2 = new Job();
+
+            job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        }
+
+
+
+        //TODO: add emptyTest so we can configure our runtime environment
+        [TestMethod]
         public void EmptyTest()
         {
             Assert.AreEqual(10,10,.001);
@@ -50,7 +61,14 @@ namespace TechJobs.Tests
             string actual4 = job3.JobCoreCompetency.value;
             Assert.AreEqual("Persistence", actual4);
 
+        }
 
+        [TestMethod]
+
+        public void TestJobsForEquality ()
+        {
+            int actual = job1.Id - job1.Id;
+            Assert.AreEqual(0, actual);
         }
         // ... other TODOs omitted here
 
