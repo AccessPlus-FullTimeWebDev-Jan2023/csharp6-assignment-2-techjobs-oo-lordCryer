@@ -47,7 +47,62 @@ namespace TechJobsOOAutoGraded6
 
         // TODO: Task 5: Generate custom ToString() method.
 
+        public override string ToString()
+        {
+            string buildString = $"{Environment.NewLine}ID: {Id}";
+            if (Name == null || Name == String.Empty)
+            {
+              buildString +=  $"{Environment.NewLine}Name: Data not available";
+            } else
+            {
+                buildString += $"{Environment.NewLine}Name: {Name}";
+            }
 
+            if (EmployerName.Value == null || EmployerName.Value == String.Empty)
+            {
+                buildString += $"{Environment.NewLine}Employer: Data not available";
+            }
+            else
+            {
+                buildString += $"{Environment.NewLine}Employer: {EmployerName.Value}";
+            }
+
+            if (EmployerLocation.Value == null || EmployerLocation.Value == String.Empty)
+            {
+                buildString += $"{Environment.NewLine}Location: Data not available";
+            }
+            else
+            {
+                buildString += $"{Environment.NewLine}Location: {EmployerLocation.Value}";
+            }
+
+            if (JobType.Value == null || JobType.Value == String.Empty)
+            {
+                buildString += $"{Environment.NewLine}Position Type: Data not available";
+            }
+            else
+            {
+                buildString += $"{Environment.NewLine}Position Type: {JobType.Value}";
+            }
+
+            if (JobCoreCompetency.Value == null || JobCoreCompetency.Value == String.Empty)
+            {
+                buildString += $"{Environment.NewLine}Core Competency: Data not available" +
+                    $"{Environment.NewLine}";
+            }
+            else
+            {
+                buildString += $"{Environment.NewLine}Core Competency: {JobCoreCompetency.Value}" +
+                    $"{Environment.NewLine}";
+            }
+
+            return buildString;
+                 
+          
+           
+        }
+
+        
 
         //Until you create this method, you will not be able to print a job to the console.
 
